@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labs.CHM.Lab4", "Labs.CHM.Lab4\Labs.CHM.Lab4.csproj", "{268DA649-BFC7-4F71-97C5-CA75A542A75F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Labs.CHM.Lab4", "Labs.CHM.Lab4\Labs.CHM.Lab4.csproj", "{268DA649-BFC7-4F71-97C5-CA75A542A75F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labs.CHM.Lab1", "Labs.CHM.Lab1\Labs.CHM.Lab1.csproj", "{E018DAE4-1190-46B9-95CD-2C805D240C93}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Labs.CHM.Lab1", "Labs.CHM.Lab1\Labs.CHM.Lab1.csproj", "{E018DAE4-1190-46B9-95CD-2C805D240C93}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labs.CHM.Lab2", "Labs.CHM.Lab2\Labs.CHM.Lab2.csproj", "{63EBEBCB-7664-4BBE-AF70-35836C6D0ED6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Labs.CHM.Lab2", "Labs.CHM.Lab2\Labs.CHM.Lab2.csproj", "{63EBEBCB-7664-4BBE-AF70-35836C6D0ED6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labs.CHM.Lab3", "Labs.CHM.Lab3\Labs.CHM.Lab3.csproj", "{6BDE8FC7-90C4-4BE2-8519-2BF3ADB13B14}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Labs.CHM.Lab3", "Labs.CHM.Lab3\Labs.CHM.Lab3.csproj", "{6BDE8FC7-90C4-4BE2-8519-2BF3ADB13B14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labs.CHM.Lab4Vizualizer", "Labs.CHM.Lab4Vizualizer\Labs.CHM.Lab4Vizualizer.csproj", "{4546BF38-FC03-42C9-9E65-C77799E819EC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{6BDE8FC7-90C4-4BE2-8519-2BF3ADB13B14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6BDE8FC7-90C4-4BE2-8519-2BF3ADB13B14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6BDE8FC7-90C4-4BE2-8519-2BF3ADB13B14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4546BF38-FC03-42C9-9E65-C77799E819EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4546BF38-FC03-42C9-9E65-C77799E819EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4546BF38-FC03-42C9-9E65-C77799E819EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4546BF38-FC03-42C9-9E65-C77799E819EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
