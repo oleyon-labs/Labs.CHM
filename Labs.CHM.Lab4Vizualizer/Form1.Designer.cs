@@ -38,9 +38,10 @@
             // 
             // graph
             // 
-            this.graph.Location = new System.Drawing.Point(12, 12);
+            this.graph.Location = new System.Drawing.Point(14, 16);
+            this.graph.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.graph.Name = "graph";
-            this.graph.Size = new System.Drawing.Size(979, 541);
+            this.graph.Size = new System.Drawing.Size(1119, 721);
             this.graph.TabIndex = 0;
             this.graph.TabStop = false;
             this.graph.Click += new System.EventHandler(this.graph_Click);
@@ -48,9 +49,10 @@
             // calculate
             // 
             this.calculate.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.calculate.Location = new System.Drawing.Point(857, 559);
+            this.calculate.Location = new System.Drawing.Point(979, 745);
+            this.calculate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.calculate.Name = "calculate";
-            this.calculate.Size = new System.Drawing.Size(134, 48);
+            this.calculate.Size = new System.Drawing.Size(153, 64);
             this.calculate.TabIndex = 3;
             this.calculate.Text = "Рассчитать";
             this.calculate.UseVisualStyleBackColor = true;
@@ -60,9 +62,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(509, 568);
+            this.label1.Location = new System.Drawing.Point(536, 759);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(223, 30);
+            this.label1.Size = new System.Drawing.Size(287, 37);
             this.label1.TabIndex = 5;
             this.label1.Text = "Количество итераций";
             // 
@@ -71,29 +73,32 @@
             this.errorLabel.AutoSize = true;
             this.errorLabel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.errorLabel.ForeColor = System.Drawing.Color.Red;
-            this.errorLabel.Location = new System.Drawing.Point(12, 568);
+            this.errorLabel.Location = new System.Drawing.Point(14, 757);
             this.errorLabel.Name = "errorLabel";
-            this.errorLabel.Size = new System.Drawing.Size(19, 30);
+            this.errorLabel.Size = new System.Drawing.Size(24, 37);
             this.errorLabel.TabIndex = 6;
             this.errorLabel.Text = " ";
             // 
             // iterationsInputTextBox
             // 
-            this.iterationsInputTextBox.Location = new System.Drawing.Point(738, 577);
+            this.iterationsInputTextBox.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.iterationsInputTextBox.Location = new System.Drawing.Point(843, 769);
+            this.iterationsInputTextBox.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.iterationsInputTextBox.Name = "iterationsInputTextBox";
-            this.iterationsInputTextBox.Size = new System.Drawing.Size(100, 23);
+            this.iterationsInputTextBox.Size = new System.Drawing.Size(114, 43);
             this.iterationsInputTextBox.TabIndex = 7;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1003, 619);
+            this.ClientSize = new System.Drawing.Size(1146, 825);
             this.Controls.Add(this.iterationsInputTextBox);
             this.Controls.Add(this.errorLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.calculate);
             this.Controls.Add(this.graph);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.graph)).EndInit();

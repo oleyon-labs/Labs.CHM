@@ -11,7 +11,7 @@ class Program
         Console.WriteLine(Directory.GetCurrentDirectory());
 
 
-        KoshiSolver.SolveRungeKutt("input3.txt", f6, "output.txt");
+        KoshiSolver.SolveRungeKutt("input3.txt", f1, "output.txt");
     }
 
     public static double f1(double x, double y)

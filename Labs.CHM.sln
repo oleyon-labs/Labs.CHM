@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Labs.CHM.Lab3", "Labs.CHM.L
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Labs.CHM.Lab4Vizualizer", "Labs.CHM.Lab4Vizualizer\Labs.CHM.Lab4Vizualizer.csproj", "{4546BF38-FC03-42C9-9E65-C77799E819EC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labs.CHM.Lab5", "Labs.CHM.Lab5\Labs.CHM.Lab5.csproj", "{8C9A3F02-D200-48DF-85DB-DEBF8677774B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Labs.CHM.Lab5", "Labs.CHM.Lab5\Labs.CHM.Lab5.csproj", "{8C9A3F02-D200-48DF-85DB-DEBF8677774B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Labs.CHM.Lab6", "Labs.CHM.Lab6\Labs.CHM.Lab6.csproj", "{AE1E1AAF-B929-4A0A-9170-EFA074686D2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{8C9A3F02-D200-48DF-85DB-DEBF8677774B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C9A3F02-D200-48DF-85DB-DEBF8677774B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C9A3F02-D200-48DF-85DB-DEBF8677774B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE1E1AAF-B929-4A0A-9170-EFA074686D2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE1E1AAF-B929-4A0A-9170-EFA074686D2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE1E1AAF-B929-4A0A-9170-EFA074686D2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE1E1AAF-B929-4A0A-9170-EFA074686D2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
