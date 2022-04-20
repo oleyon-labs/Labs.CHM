@@ -8,9 +8,9 @@ class Program
         Directory.SetCurrentDirectory("../../../");
         Console.WriteLine(Directory.GetCurrentDirectory());
 
-        ShootingSolver.Solve("input1.txt", f2, "output.txt");
+        ShootingSolver.Solve("input1.txt", f2, "output.txt", result2);
         Console.WriteLine("");
-        ShootingSolver.Solve("input1.txt", f2,f2y,f2y1, "output.txt");
+        //ShootingSolver.Solve("input1.txt", f2,f2y,f2y1, "output.txt");
     }
     public static double f1(double x, double y, double y1)
     {
@@ -27,5 +27,9 @@ class Program
     public static double f2y1(double x, double y, double y1)
     {
         return 0;
+    }
+    public static double result2(double x)
+    {
+        return (8 + 2 * x + x * x) / 8;
     }
 }

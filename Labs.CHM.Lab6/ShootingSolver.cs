@@ -80,11 +80,104 @@ namespace Labs.CHM.Lab6
                 //step 7
                 if(Math.Abs(w[0,N]-B)<=eps)//steps 8-9
                 {
+                    Console.WriteLine("x\ty\ty'");
                     //step 8
                     for (int j = 0; j <= N; j++)
                     {
                         double x=a+j*h;
-                        Console.WriteLine($"{x}; {w[0,j]}; {w[1,j]}");
+                        //Console.WriteLine($"{x}; {w[0,j]}; {w[1,j]}");
+                        Console.WriteLine($"{Math.Round(x, 3)}\t{Math.Round(w[0, j], 3)}\t{Math.Round(w[1, j], 3)}");
+                    }
+                    //step 9
+                    return;
+                }
+                //step 10
+                TK = TK - (w[0, N] - B) / u1;
+                kc++;
+            }
+            //step 11
+            Console.WriteLine("Maximum number of iterations exceeded");
+            return;
+        }
+        public static void Solve(string data, Func<double, double, double, double> f, string res, Func<double, double> result)
+        {
+            var Derivative = MathNet.Numerics.Differentiate.FirstPartialDerivative;
+            int icod = -1,N;
+            double a, b, A, B, eps, M, TK;
+            var fileData = File.ReadAllLines(data);
+            string[] line = fileData[0].Split(' ');
+            a = double.Parse(line[0]); //left x
+            b = double.Parse(line[1]); //right x
+            A = double.Parse(line[2]); //first condition
+            B = double.Parse(line[3]); //second condition
+            N = int.Parse(line[4]); //number of intervals
+            eps = double.Parse(line[5]); //tolerance
+            M = double.Parse(line[6]); //maximum number of iterations
+
+            TK = double.Parse(line[7]); //initial value of parameter
+
+
+
+            double[,] w = new double[2, N + 1];
+            double[,] k = new double[4, 2];
+            double[,] k1 = new double[4, 2];
+            double u1, u2;
+
+            Func<double[], double> func = (p) => f(p[0], p[1], p[2]);
+
+            //step 1
+            double h = (b - a) / (N);
+            int kc = 1;
+            TK = TK;
+            //step 2
+            while (kc <= M) //steps 3-10
+            {
+                //step 3
+                w[0, 0] = A;
+                w[1, 0] = TK;
+                u1 = 0;
+                u2 = 1;
+                //step 4
+                for (int i = 1; i <= N; i++) //steps 5-6
+                {
+                    //step 5
+                    double x = a + (i - 1) * h;
+                    //step 6
+                    k[0, 0] = h * w[1, i - 1];
+                    k[0, 1] = h * f(x, w[0, i - 1], w[1, i - 1]);
+                    k[1, 0] = h * (w[1, i - 1] + 1.0 / 2.0 * k[0, 1]);
+                    k[1, 1] = h * f(x + h / 2, w[0, i - 1] + 1.0 / 2 * k[0, 0], w[1, i - 1] + 1.0 / 2 * k[0, 1]);
+                    k[2, 0] = h * (w[1, i - 1] + 1.0 / 2 * k[1, 1]);
+                    k[2, 1] = h * f(x + h / 2, w[0, i - 1] + 1.0 / 2 * k[1, 0], w[1, i - 1] + 1.0 / 2 * k[1, 1]);
+                    k[3, 0] = h * (w[1, i - 1] + k[2, 1]);
+                    k[3, 1] = h * f(x + h, w[0, i - 1] + k[2, 0], w[1, i - 1] + k[2, 1]);
+                    w[0, i] = w[0, i - 1] + (k[0, 0] + 2 * k[1, 0] + 2 * k[2, 0] + k[3, 0]) / 6.0;
+                    w[1, i] = w[1, i - 1] + (k[0, 1] + 2 * k[1, 1] + 2 * k[2, 1] + k[3, 1]) / 6.0;
+                    k1[0, 0] = h * u2;
+                    k1[0, 1] = h * (Derivative(func, new double[] { x, w[0, i - 1], w[1, i - 1] }, 1) * u1
+                        + Derivative(func, new double[] { x, w[0, i - 1], w[1, i - 1] }, 2) * u2);
+                    k1[1, 0] = h * (u2 + 1.0 / 2 * k1[0, 1]);
+                    k1[1, 1] = h * (Derivative(func, new double[] { x + h / 2, w[0, i - 1], w[1, i - 1] }, 1) * (u1 + 1.0 / 2 * k1[0, 0])
+                        + Derivative(func, new double[] { x + h / 2, w[0, i - 1], w[1, i - 1] }, 2) * (u2 + 1.0 / 2 * k1[0, 1]));
+                    k1[2, 0] = h * (u2 + 1.0 / 2 * k[1, 1]);
+                    k1[2, 1] = h * (Derivative(func, new double[] { x + h / 2, w[0, i - 1], w[1, i - 1] }, 1) * (u1 + 1.0 / 2 * k1[1, 0])
+                        + Derivative(func, new double[] { x + h / 2, w[0, i - 1], w[1, i - 1] }, 2) * (u2 + 1.0 / 2 * k1[1, 1]));
+                    k[3, 0] = h * (u2 + k1[2, 1]);
+                    k[3, 1] = h * (Derivative(func, new double[] { x + h, w[0, i - 1], w[1, i - 1] }, 1) * (u1 + k1[2, 0])
+                        + Derivative(func, new double[] { x + h, w[0, i - 1], w[1, i - 1] }, 2) * (u2 + k1[2, 1]));
+                    u1 = u1 + (k1[0, 0] + 2 * k1[1, 0] + 2 * k1[2, 0] + k1[3, 0]) / 6;
+                    u2 = u2 + (k1[0, 1] + 2 * k1[1, 1] + 2 * k1[2, 1] + k1[3, 1]) / 6;
+                }
+                //step 7
+                if (Math.Abs(w[0, N] - B) <= eps)//steps 8-9
+                {
+                    Console.WriteLine("x\ty\ty'\tDy\tDy'");
+                    //step 8
+                    for (int j = 0; j <= N; j++)
+                    {
+                        double x = a + j * h;
+                        //Console.WriteLine($"{x}; {w[0,j]}; {w[1,j]}");
+                        Console.WriteLine($"{Math.Round(x, 3)}\t{Math.Round(w[0, j], 3)}\t{Math.Round(w[1, j], 3)}\t{Math.Abs(result(x)-w[0,j])}\t{Math.Abs(MathNet.Numerics.Differentiate.FirstDerivative(result, x)-w[1,j])}");
                     }
                     //step 9
                     return;
